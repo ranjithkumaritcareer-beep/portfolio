@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjith Kumar M | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // User needs to replace this
+        })();
+    </script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="welcome-text">Welcome to my world</h1>
+            <div class="loader-bar-container"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <div id="tsparticles"></div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <!-- Place your background music file here named bg-music.mp3 -->
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle Music">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- Animated Image Background -->
+    <div class="slideshow-container">
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">RKM<span class="accent">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#creator">Content Creator</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- 1. HOME / HERO PAGE -->
+        <section id="home" class="hero section-padding">
+            <div class="floating-shapes">
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+            </div>
+            <div class="container hero-container">
+                <div class="hero-content gs-reveal">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-glow"></div>
+                        <!-- Floating orbit rings -->
+                        <div class="orbit orbit-1">
+                            <div class="orbit-dot"><i class="fas fa-code"></i></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="orbit-dot"><i class="fas fa-laptop"></i></div>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <div class="orbit-dot"><i class="fab fa-python"></i></div>
+                        </div>
+                        <div class="orbit orbit-4">
+                            <div class="orbit-dot"><i class="fas fa-star"></i></div>
+                        </div>
+                        <img src="images/profile.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ranjith+Kumar&background=d4af37&color=0a0a1a&size=150';" alt="Ranjith Kumar M" class="avatar">
+                    </div>
+                    <h1 class="hero-title">Hi, I'm <span class="neon-text">Ranjith Kumar M</span> <span class="wave">👋</span></h1>
+                    <div class="typewriter-container">
+                        <span id="typewriter"></span><span class="cursor">|</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#about" class="btn btn-primary">View My Work</a>
+                        <a href="ranjith-kumar-resume.docx" download class="btn btn-secondary">Download Resume <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>Scroll Down</div>
+            </a>
+        </section>
+
+        <!-- 2. ABOUT PAGE -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">About <span class="neon-text">Me</span></h2>
+                <div class="about-grid">
+                    <div class="about-img gs-reveal gs-left">
+                        <div class="img-frame">
+                            <img src="images/profile.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531297172315-d06ea8f0b005?q=80&w=1000&auto=format&fit=crop';" alt="Ranjith Kumar M">
+                            <div class="frame-border"></div>
+                        </div>
+                    </div>
+                    <div class="about-text gs-reveal gs-right">
+                        <p class="bio">I'm <strong>Ranjith Kumar M</strong>, a B.E. Computer Science Engineering student at Prathyusha Engineering College, Thiruvallur, Tamil Nadu (2025–2029). I was awarded a <strong>Full 4-Year Scholarship for Academic Excellence</strong>. I'm passionate about AI, Cloud Computing, Web Development, and DevOps. Outside academics, I'm a content creator on Instagram and YouTube, creating tech and student life content for beginner CSE students.</p>
+                        
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="1">0</h3>
+                                <p>Internship</p>
+                            </div>
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="2">0</h3>
+                                <p>Certifications</p>
+                            </div>
+                            <div class="stat-box">
+                                <h3>4-Year</h3>
+                                <p>Scholarship</p>
+                            </div>
+                            <div class="stat-box">
+                                <h3><span class="counter" data-target="1000">0</span>+</h3>
+                                <p>Insta Followers</p>
+                            </div>
+                        </div>
+
+                        <div class="skills-progress">
+                            <div class="skill-bar-container">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-line"><span class="python-progress" data-width="90%"></span></div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-info">
+                                    <span>C / C++</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-line"><span class="c-progress" data-width="80%"></span></div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-info">
+                                    <span>Web Dev (HTML/CSS/JS)</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-line"><span class="web-progress" data-width="85%"></span></div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-info">
+                                    <span>AI / ML Concepts</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="progress-line"><span class="ai-progress" data-width="70%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EDUCATION PAGE -->
+        <section id="education" class="education section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">My <span class="neon-text">Education</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item gs-reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date">2025 – 2029</div>
+                            <h3>B.E. Computer Science Engineering</h3>
+                            <h4>Prathyusha Engineering College</h4>
+                            <p>Awarded Full 4-Year Scholarship for Academic Excellence. Focusing on core computer science fundamentals, AI, and practical software engineering.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item gs-reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date">Completed 2025</div>
+                            <h3>12th Standard (CSE)</h3>
+                            <h4>Higher Secondary School</h4>
+                            <p>Score: 530/600 (88%). Specialized in Computer Science group with excellent academic performance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item gs-reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date">Completed 2023</div>
+                            <h3>10th Standard</h3>
+                            <h4>Secondary School</h4>
+                            <p>Score: 85%. Strong foundation in Mathematics and Science.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EXPERIENCE & INTERNSHIP PAGE -->
+        <section id="experience" class="experience section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Experience & <span class="neon-text">Internships</span></h2>
+                <div class="cards-grid">
+                    <div class="exp-card glass-card gs-reveal 3d-hover">
+                        <div class="card-icon"><i class="fab fa-python"></i></div>
+                        <h3>Python Programming Intern</h3>
+                        <h4>InternPe (Jaipur, Rajasthan)</h4>
+                        <div class="duration"><i class="far fa-calendar-alt"></i> 13 Oct 2025 – 09 Nov 2025</div>
+                        <ul class="exp-list">
+                            <li><i class="fas fa-check-circle"></i> Gained hands-on Python development experience</li>
+                            <li><i class="fas fa-check-circle"></i> Worked on small-scale coding projects and debugging</li>
+                            <li><i class="fas fa-check-circle"></i> Improved logical thinking, team coordination, and code optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SKILLS PAGE -->
+        <section id="skills" class="skills section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Technical <span class="neon-text">Skills</span></h2>
+                
+                <div class="skills-categories">
+                    <div class="skill-category gs-reveal">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category gs-reveal">
+                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Google Colab</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category gs-reveal">
+                        <h3><i class="fas fa-lightbulb"></i> Interests</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Cloud Computing</span>
+                            <span class="skill-tag">AI / ML</span>
+                            <span class="skill-tag">DevOps</span>
+                            <span class="skill-tag">Web Development</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category gs-reveal">
+                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Teamwork</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Time Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CERTIFICATIONS PAGE -->
+        <section id="certifications" class="certifications section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Licenses & <span class="neon-text">Certifications</span></h2>
+                <div class="cert-grid">
+                    <div class="cert-card glass-card gs-reveal gs-left">
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="cert-content">
+                            <h3>Introduction to Generative AI</h3>
+                            <h4>Simplilearn</h4>
+                            <p class="cert-date">Oct 2025</p>
+                            <p class="cert-code">Credential ID: 9114312</p>
+                        </div>
+                    </div>
+                    <div class="cert-card glass-card gs-reveal gs-right">
+                        <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="cert-content">
+                            <h3>Python Programming Internship</h3>
+                            <h4>InternPe</h4>
+                            <p class="cert-date">Oct–Nov 2025</p>
+                            <p class="cert-code">Completion Certificate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTENT CREATOR PAGE -->
+        <section id="creator" class="creator section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Content Creator <span class="wave">🎬</span></h2>
+                <p class="section-subtitle gs-reveal">I create tech and student life content for beginner CSE students on Instagram and YouTube. Topics include DSA/Coding Challenges, Internship Tips, College Life, and Tech Concepts.</p>
+                
+                <div class="creator-grid">
+                    <!-- Instagram Card -->
+                    <div class="social-card insta-card glass-card gs-reveal">
+                        <div class="social-header">
+                            <i class="fab fa-instagram neon-icon"></i>
+                            <h3>Instagram</h3>
+                        </div>
+                        <div class="profile-info">
+                            <img src="https://ui-avatars.com/api/?name=Ranjith+X&background=f39c12&color=fff&size=80" alt="Insta Profile" class="social-avatar">
+                            <div>
+                                <h4>@ranjithx_official</h4>
+                                <p>Tech & Student Life</p>
+                            </div>
+                        </div>
+                        <div class="mock-grid">
+                            <div class="mock-post"></div>
+                            <div class="mock-post"></div>
+                            <div class="mock-post"></div>
+                        </div>
+                        <a href="https://www.instagram.com/ranjithx_official" target="_blank" class="btn btn-outline neon-border">Visit Profile</a>
+                    </div>
+                    
+                    <!-- YouTube Card -->
+                    <div class="social-card yt-card glass-card gs-reveal">
+                        <div class="social-header">
+                            <i class="fab fa-youtube neon-icon-yt"></i>
+                            <h3>YouTube</h3>
+                        </div>
+                        <div class="profile-info">
+                            <div class="yt-banner"></div>
+                            <div class="yt-details">
+                                <img src="https://ui-avatars.com/api/?name=Ranjith+Tech&background=ff0000&color=fff&size=60" alt="YT Profile" class="social-avatar yt-avatar">
+                                <div>
+                                    <h4>Ranjith Tech</h4>
+                                    <p>Coding Tutorials & Tips</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://youtube.com/@ranjith4321?si=LEokgl7YorY1iQgU" target="_blank" class="btn btn-outline neon-border-yt">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ACHIEVEMENTS PAGE -->
+        <section id="achievements" class="achievements section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Key <span class="neon-text">Achievements</span></h2>
+                <div class="achievements-list">
+                    <div class="achievement-item glass-card gs-reveal ach-expanded">
+                        <div class="ach-header">
+                            <div class="ach-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="ach-text">Awarded <strong>Full 4-Year Scholarship (100%)</strong> for outstanding academic performance at Prathyusha Engineering College.</div>
+                        </div>
+                        <div class="ach-images">
+                            <img src="images/scholarship-1.jpeg" alt="Scholarship Letter 1" class="ach-img">
+                            <img src="images/scholarship-2.jpeg" alt="Scholarship Letter 2" class="ach-img">
+                        </div>
+                    </div>
+                    <div class="achievement-item glass-card gs-reveal">
+                        <div class="ach-icon"><i class="fas fa-medal"></i></div>
+                        <div class="ach-text">Successfully completed <strong>Python Programming Internship</strong> at InternPe.</div>
+                    </div>
+                    <div class="achievement-item glass-card gs-reveal">
+                        <div class="ach-icon"><i class="fas fa-star"></i></div>
+                        <div class="ach-text">Certified in <strong>Generative AI</strong> by Simplilearn.</div>
+                    </div>
+                    <div class="achievement-item glass-card gs-reveal">
+                        <div class="ach-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="ach-text">Actively participates in technical workshops and coding challenges.</div>
+                    </div>
+                    <div class="achievement-item glass-card gs-reveal">
+                        <div class="ach-icon"><i class="fas fa-award"></i></div>
+                        <div class="ach-text">Recognized for consistent dedication and learning attitude.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. RESUME SECTION -->
+        <section id="resume" class="resume section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">My <span class="neon-text">Resume</span></h2>
+                <div class="resume-wrapper">
+                    <div class="resume-card glass-card gs-reveal">
+                        <div class="resume-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h3>Ranjith Kumar M</h3>
+                        <h4>Curriculum Vitae</h4>
+                        <p>Download my complete resume to view my full academic history, technical skills, and key achievements.</p>
+                        <a href="ranjith-kumar-resume.docx" download class="btn btn-primary resume-btn">Download .DOCX <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CONTACT PAGE -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <h2 class="section-title gs-reveal">Got a Question? <span class="neon-text">Let's Connect! 📬</span></h2>
+                <p class="section-subtitle gs-reveal">Have a question about me, want to collaborate, or just want to say hi? Fill in the form below and your message will be sent directly to my email.</p>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-form-container glass-card gs-reveal gs-left">
+                        <form id="contact-form">
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="subject" name="subject" required placeholder=" ">
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                                <label for="message">Your Message / Question</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p id="form-status"></p>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info gs-reveal gs-right">
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:ranjith.kumar.itcareer@mail.com">ranjith.kumar.itcareer@mail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Thiruvallur, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links-large">
+                            <a href="https://www.linkedin.com/in/ranjith811" target="_blank" class="social-icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/ranjithx_official" target="_blank" class="social-icon-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/" target="_blank" class="social-icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        
+                        <!-- Map Placeholder -->
+                        <div class="map-container">
+                            <div class="map-bg"></div>
+                            <div class="pin">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D Contact Image Panel -->
+                    <div class="contact-img-panel gs-reveal gs-right">
+                        <div class="contact-img-3d" id="contact-img-3d">
+                            <div class="contact-img-frame">
+                                <img src="images/contact-img.jpeg" alt="Contact" class="contact-img">
+                                <div class="contact-img-shine"></div>
+                            </div>
+                            <div class="contact-img-shadow"></div>
+                            <div class="contact-img-badge badge-top"><i class="fas fa-envelope"></i> Let's Talk!</div>
+                            <div class="contact-img-badge badge-bottom"><i class="fas fa-handshake"></i> Collaborate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">RKM<span class="accent">.</span></div>
+                <p>Designed & Built by Ranjith Kumar M | B.E. CSE Student</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/ranjith811" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ranjithx_official" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://youtube.com/@ranjith4321?si=LEokgl7YorY1iQgU" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Vanilla Tilt for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
